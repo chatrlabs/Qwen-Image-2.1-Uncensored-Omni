@@ -1,0 +1,11 @@
+# Install a CUDA-compatible PyTorch build first. Tested with torch 2.11.0+cu128.
+diffusers>=0.42.1
+transformers==5.16.1
+accelerate==1.15.0
+safetensors==0.8.0
+Pillow>=10
+gguf>=0.19.0
+
+# Optional, only for the matching builds:
+# torchao>=0.16          # FP8-torchao
+# bitsandbytes>=0.45     # NF4-bnb, INT8-bnb
