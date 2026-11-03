@@ -47,8 +47,8 @@ def main():
     parser.add_argument("--width", type=int, default=1024)
     parser.add_argument("--height", type=int, default=1024)
     parser.add_argument("--output-resolution", type=int, default=1024)
-    parser.add_argument("--steps", type=int, default=25)
-    parser.add_argument("--cfg", type=float, default=4.0)
+    parser.add_argument("--steps", type=int, default=35)
+    parser.add_argument("--cfg", type=float, default=5.0)
     parser.add_argument("--negative", default=" ")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", choices=["offload", "cuda"], default="offload",
