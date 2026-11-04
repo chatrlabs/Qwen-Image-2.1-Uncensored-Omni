@@ -8,8 +8,7 @@
 This repository holds the **documentation, inference code and checksums** for the quantized ChatR Labs Omni
 release of [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1). Weights live on Hugging Face.
 
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000)** — 78 GB
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000)** — 78 GB
+- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni)** — 78 GB
 
 Each repository is a rank-128 adapter merged into the base transformer at **LoRA strength 1.0**, then quantized.
 Quantized transformer weights only: the text encoder, processor and VAE come from the base repository.
@@ -23,20 +22,20 @@ interface accepts one to three reference images. Requests share a queue.
 
 ## Download
 
-| Build | Format | Layout | Size | step 32,000 | step 90,000 |
-| --- | --- | --- | ---: | --- | --- |
-| **BF16** | GGUF BF16 | 297 | 14.23 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-BF16.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-BF16.gguf) |
-| **Q8_0** | GGUF Q8_0 | 297 | 7.69 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q8_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q8_0.gguf) |
-| **Q6_K** | GGUF Q6_K | 297 | 6.00 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q6_K.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q6_K.gguf) |
-| **Q5_K_M** | GGUF Q5_K_M | 297 | 5.21 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q5_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q5_K_M.gguf) |
-| **Q4_K_M** | GGUF Q4_K_M | 297 | 4.47 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q4_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q4_K_M.gguf) |
-| **Q4_0** | GGUF Q4_0 | 297 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q4_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q4_0.gguf) |
-| **FP8** | FP8 E4M3, Comfy | 265 | 7.12 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-FP8-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-FP8-comfy.safetensors) |
-| **INT8 ConvRot** | INT8 ConvRot, Comfy | 265 | 7.26 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-INT8-ConvRot-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors) |
-| **NVFP4** | NVFP4, Comfy | 265 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-NVFP4-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-NVFP4-comfy.safetensors) |
-| **FP8 (torchao)** | FP8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-FP8-torchao) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
-| **NF4** | NF4, Diffusers | 297 | 3.50 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-NF4-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
-| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-INT8-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
+| Build | Format | Layout | Size | Download |
+| --- | --- | --- | ---: | --- |
+| **BF16** | GGUF BF16 | 297 | 14.23 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-BF16.gguf) |
+| **Q8_0** | GGUF Q8_0 | 297 | 7.69 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-Q8_0.gguf) |
+| **Q6_K** | GGUF Q6_K | 297 | 6.00 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-Q6_K.gguf) |
+| **Q5_K_M** | GGUF Q5_K_M | 297 | 5.21 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-Q5_K_M.gguf) |
+| **Q4_K_M** | GGUF Q4_K_M | 297 | 4.47 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-Q4_K_M.gguf) |
+| **Q4_0** | GGUF Q4_0 | 297 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-Q4_0.gguf) |
+| **FP8** | FP8 E4M3, Comfy | 265 | 7.12 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-FP8-comfy.safetensors) |
+| **INT8 ConvRot** | INT8 ConvRot, Comfy | 265 | 7.26 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors) |
+| **NVFP4** | NVFP4, Comfy | 265 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/resolve/main/qwen-image-2.1-step90000-NVFP4-comfy.safetensors) |
+| **FP8 (torchao)** | FP8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
+| **NF4** | NF4, Diffusers | 297 | 3.50 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
+| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
 
 File integrity information is in [SHA256SUMS](./SHA256SUMS).
 
@@ -72,7 +71,7 @@ distillation.
 
 ```
 ComfyUI/models/
-├── diffusion_models/    qwen-image-2.1-step32000-Q5_K_M.gguf
+├── diffusion_models/    qwen-image-2.1-step90000-Q5_K_M.gguf
 ├── text_encoders/       <Qwen-Image-2.1 text encoder>
 └── vae/                 <Qwen-Image-2.1 VAE>
 ```
@@ -92,7 +91,7 @@ import torch
 from diffusers import QwenImage21Pipeline, QwenImage21Transformer2DModel, GGUFQuantizationConfig
 
 transformer = QwenImage21Transformer2DModel.from_single_file(
-    "qwen-image-2.1-step32000-Q5_K_M.gguf",
+    "qwen-image-2.1-step90000-Q5_K_M.gguf",
     quantization_config=GGUFQuantizationConfig(compute_dtype=torch.bfloat16),
     config="Qwen/Qwen-Image-2.1",
     subfolder="transformer",
@@ -111,8 +110,8 @@ import torch
 from diffusers import QwenImage21Pipeline, QwenImage21Transformer2DModel
 
 transformer = QwenImage21Transformer2DModel.from_pretrained(
-    "chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000",
-    subfolder="qwen-image-2.1-step32000-FP8-torchao",
+    "chatrlabs/Qwen-Image-2.1-Uncensored-Omni",
+    subfolder="qwen-image-2.1-step90000-FP8-torchao",
     torch_dtype=torch.bfloat16,
 )
 pipe = QwenImage21Pipeline.from_pretrained(
@@ -168,16 +167,16 @@ Keep VAE tiling off: tiled decoding adds visible vertical colour streaks.
 
 ```bash
 # text to image, GGUF
-python inference.py --gguf qwen-image-2.1-step32000-Q5_K_M.gguf \
+python inference.py --gguf qwen-image-2.1-step90000-Q5_K_M.gguf \
     --prompt "A blue ceramic mug on a wooden table" --output generated.png
 
 # text to image, Diffusers FP8 folder
-python inference.py --transformer-repo chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000 \
-    --subfolder qwen-image-2.1-step32000-FP8-torchao \
+python inference.py --transformer-repo chatrlabs/Qwen-Image-2.1-Uncensored-Omni \
+    --subfolder qwen-image-2.1-step90000-FP8-torchao \
     --prompt "A blue ceramic mug on a wooden table" --output generated.png
 
 # editing
-python inference.py --gguf qwen-image-2.1-step32000-Q5_K_M.gguf \
+python inference.py --gguf qwen-image-2.1-step90000-Q5_K_M.gguf \
     --image generated.png --prompt "Change the mug to green" --output edited.png
 ```
 
@@ -203,7 +202,7 @@ These are individual timings, not comparative quality benchmarks.
 | Base | Qwen-Image-2.1 |
 | Adapter | ChatR Labs rank-128 Omni LoRA |
 | Merge strength | **1.0** |
-| Training checkpoints | Step 32,000 and step 90,000 |
+| Training checkpoint | Step 90,000 |
 | Adapted modules | 224 |
 | Diffusers-layout tensors | 297 |
 | Comfy-layout tensors | 265 |

@@ -23,7 +23,7 @@ def build_transformer(args):
 
     if args.transformer_repo:
         if not args.subfolder:
-            raise SystemExit("--transformer-repo needs --subfolder (e.g. qwen-image-2.1-step32000-FP8-torchao)")
+            raise SystemExit("--transformer-repo needs --subfolder (e.g. qwen-image-2.1-step90000-FP8-torchao)")
         dtype = torch.float16 if "INT8-bnb" in args.subfolder else torch.bfloat16
         return QwenImage21Transformer2DModel.from_pretrained(
             args.transformer_repo, subfolder=args.subfolder, torch_dtype=dtype
