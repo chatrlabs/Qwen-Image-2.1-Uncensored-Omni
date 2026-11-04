@@ -16,7 +16,7 @@ Quantized transformer weights only: the text encoder, processor and VAE come fro
 
 ## Try it online
 
-**[Open the Playground →](https://chatrlabs.com/)**
+**[Open the Playground →]([https://chatrlabs.com/playground](https://chatrlabs.com/playground))**
 
 No account is required. Choose **Text to Image** or **Image Editing**, enter a prompt, and generate. The editing
 interface accepts one to three reference images. Requests share a queue.
