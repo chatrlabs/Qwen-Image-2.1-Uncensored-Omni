@@ -8,21 +8,11 @@
 This repository holds the **documentation, inference code and checksums** for the quantized ChatR Labs Omni
 release of [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1). Weights live on Hugging Face.
 
-**Recommended (weight 1.0):**
+- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000)** — 78 GB
+- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000)** — 78 GB
 
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000)** — 78 GB
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000)** — 78 GB
-
-**Legacy (weight 0.8):**
-
-- [chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000)
-- [chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000)
-
-Each repository is a rank-128 adapter merged into the base transformer at the stated weight, then quantized.
+Each repository is a rank-128 adapter merged into the base transformer at **LoRA strength 1.0**, then quantized.
 Quantized transformer weights only: the text encoder, processor and VAE come from the base repository.
-
-**Use weight 1.0.** The 0.8 builds are kept for anyone already integrating them; the w1.0 builds are the ones we
-recommend and the ones the settings below were tuned on.
 
 ## Try it online
 
@@ -33,24 +23,20 @@ interface accepts one to three reference images. Requests share a queue.
 
 ## Download
 
-All filenames are identical across versions; the repository name carries the weight.
-
-### w1.0 — recommended
-
 | Build | Format | Layout | Size | step 32,000 | step 90,000 |
 | --- | --- | --- | ---: | --- | --- |
-| **BF16** | GGUF BF16 | 297 | 14.23 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-BF16.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-BF16.gguf) |
-| **Q8_0** | GGUF Q8_0 | 297 | 7.69 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-Q8_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-Q8_0.gguf) |
-| **Q6_K** | GGUF Q6_K | 297 | 6.00 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-Q6_K.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-Q6_K.gguf) |
-| **Q5_K_M** | GGUF Q5_K_M | 297 | 5.21 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-Q5_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-Q5_K_M.gguf) |
-| **Q4_K_M** | GGUF Q4_K_M | 297 | 4.47 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-Q4_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-Q4_K_M.gguf) |
-| **Q4_0** | GGUF Q4_0 | 297 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-Q4_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-Q4_0.gguf) |
-| **FP8** | FP8 E4M3, Comfy | 265 | 7.12 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-FP8-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-FP8-comfy.safetensors) |
-| **INT8 ConvRot** | INT8 ConvRot, Comfy | 265 | 7.26 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-INT8-ConvRot-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors) |
-| **NVFP4** | NVFP4, Comfy | 265 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/resolve/main/qwen-image-2.1-step32000-NVFP4-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/resolve/main/qwen-image-2.1-step90000-NVFP4-comfy.safetensors) |
-| **FP8 (torchao)** | FP8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/tree/main/qwen-image-2.1-step32000-FP8-torchao) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
-| **NF4** | NF4, Diffusers | 297 | 3.50 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/tree/main/qwen-image-2.1-step32000-NF4-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
-| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step32000/tree/main/qwen-image-2.1-step32000-INT8-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-w1.0-step90000/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
+| **BF16** | GGUF BF16 | 297 | 14.23 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-BF16.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-BF16.gguf) |
+| **Q8_0** | GGUF Q8_0 | 297 | 7.69 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q8_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q8_0.gguf) |
+| **Q6_K** | GGUF Q6_K | 297 | 6.00 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q6_K.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q6_K.gguf) |
+| **Q5_K_M** | GGUF Q5_K_M | 297 | 5.21 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q5_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q5_K_M.gguf) |
+| **Q4_K_M** | GGUF Q4_K_M | 297 | 4.47 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q4_K_M.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q4_K_M.gguf) |
+| **Q4_0** | GGUF Q4_0 | 297 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-Q4_0.gguf) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-Q4_0.gguf) |
+| **FP8** | FP8 E4M3, Comfy | 265 | 7.12 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-FP8-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-FP8-comfy.safetensors) |
+| **INT8 ConvRot** | INT8 ConvRot, Comfy | 265 | 7.26 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-INT8-ConvRot-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors) |
+| **NVFP4** | NVFP4, Comfy | 265 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/resolve/main/qwen-image-2.1-step32000-NVFP4-comfy.safetensors) | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/resolve/main/qwen-image-2.1-step90000-NVFP4-comfy.safetensors) |
+| **FP8 (torchao)** | FP8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-FP8-torchao) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
+| **NF4** | NF4, Diffusers | 297 | 3.50 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-NF4-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
+| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000/tree/main/qwen-image-2.1-step32000-INT8-bnb) | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
 
 File integrity information is in [SHA256SUMS](./SHA256SUMS).
 
@@ -216,7 +202,7 @@ These are individual timings, not comparative quality benchmarks.
 | --- | --- |
 | Base | Qwen-Image-2.1 |
 | Adapter | ChatR Labs rank-128 Omni LoRA |
-| Merge strength | **1.0** (w1.0 repos) / 0.8 (legacy repos) |
+| Merge strength | **1.0** |
 | Training checkpoints | Step 32,000 and step 90,000 |
 | Adapted modules | 224 |
 | Diffusers-layout tensors | 297 |
@@ -242,7 +228,7 @@ the build you load, and the application running it.
 - **Released by:** [ChatR Labs](https://huggingface.co/chatrlabs)
 - **Base model:** [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1)
 - **Inference:** [Hugging Face Diffusers](https://github.com/huggingface/diffusers)
-- **Modification:** ChatR Labs merged a rank-128 adapter into the base transformer at strength 1.0 (and earlier 0.8) and produced
+- **Modification:** ChatR Labs merged a rank-128 adapter into the base transformer at strength 1.0 and produced
   GGUF, FP8, INT8, NVFP4 and NF4 builds. This repository distributes documentation and code only.
 - **License:** [Qwen Research License Agreement](./LICENSE), with attribution in [Notice](./Notice). Use is
   limited to non-commercial research and evaluation unless separately licensed by the upstream rights holder.
