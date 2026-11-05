@@ -1,28 +1,12 @@
-# SHA256 of every released file. Weights live on Hugging Face, not in this repository.
-# step32000 -> https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step32000
-8dfcde3b0434504876f4da5134f682b7aa74d767725b2d54daa511639a8af3e4  step32000/qwen-image-2.1-step32000-BF16.gguf
-72707273793f176dec85ba2929a458990b0693ede458537050d01ab5b164a885  step32000/qwen-image-2.1-step32000-FP8-comfy.safetensors
-5489c20bacf7e8c6597028131dec57e9176579c8b1c93ed3a3bdb48a78b3138b  step32000/qwen-image-2.1-step32000-INT8-ConvRot-comfy.safetensors
-59f9a378d7cbf4b662299f20792e3d531ea62a08b49650d282edf3d18a5bd4e4  step32000/qwen-image-2.1-step32000-NVFP4-comfy.safetensors
-a7e90adb7c0dddf21d041fd685a06d254fb3a8ec9ca7da8c9e5659e59731cfab  step32000/qwen-image-2.1-step32000-Q4_0.gguf
-4a19c1c4787f079ce58be81190274f4a137e62d014152a30e441f91aece5c627  step32000/qwen-image-2.1-step32000-Q4_K_M.gguf
-0c8b5627a5c32672458608735c2b050aec8ef0f7ba4154922a64cef272f32cee  step32000/qwen-image-2.1-step32000-Q5_K_M.gguf
-95412d2533ba441d919c2fad0dfc1ed3953a9654eea843f18fecb7ac55a20f50  step32000/qwen-image-2.1-step32000-Q6_K.gguf
-7dfe9af7c781d6da3e8a4acd357211e9332533acf81715c4568a93b3358d024e  step32000/qwen-image-2.1-step32000-Q8_0.gguf
-539c7dcf2ea3a20de8d9437c9b702ba9bc094727a9931c80a5cf0f3d7106a0d2  step32000/step32000-FP8-torchao/diffusion_pytorch_model.safetensors
-9c46019a9e28498ccd243fbd0371b335345262422e79b0ca54196f3b4072184f  step32000/step32000-INT8-bnb/diffusion_pytorch_model.safetensors
-61589555b3ab42a79313220fbfa3be915113a74261267825532b926f69ff8261  step32000/step32000-NF4-bnb/diffusion_pytorch_model.safetensors
-
-# step90000 -> https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-step90000
-e8ed21553b99fed3c8d532e02c3d77213dad06f542019ac123d70f9d0e41129b  step90000/qwen-image-2.1-step90000-BF16.gguf
-ccc9b23357ea4dcb071104e6ddd8e00c0e91dd3aaf30d51ca5d4703781fe0fee  step90000/qwen-image-2.1-step90000-Q4_0.gguf
-8f0eb810ab45d4cc5d4868ed841fadb58f50f58cb07168370cf4a294ef90016f  step90000/qwen-image-2.1-step90000-Q4_K_M.gguf
-e73e2a781e6a40121ae1c0a9eb5499746017e81f5fdf4e3d28e3635195b5502d  step90000/qwen-image-2.1-step90000-Q5_K_M.gguf
-9dbfcccfc2f3ab7b6b2ebed3a8f1613749d7a5e070522ee49b3ad2bf444fbe8c  step90000/qwen-image-2.1-step90000-Q6_K.gguf
-a3223f97afbfba387ecd041b0770b69b55a110309c3942f3edc17f8b2cbed4b4  step90000/qwen-image-2.1-step90000-Q8_0.gguf
-f5547ef006099fef150d692580dbc26caa3975e674f08aae3b83b5cfcae34c30  step90000/qwen-image-2.1-step90000-FP8-comfy.safetensors
-5fcb3bc64284b708df843f531018939f11fd411a1d7f0e03f9973405eb764dc5  step90000/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors
-9135fc728bf2ebe0c4ca066ba775175deabf9107d2214810b0a796db64fd6d62  step90000/qwen-image-2.1-step90000-NVFP4-comfy.safetensors
-27943f0ae8d93ccdc8c4a7ddd45d153d4601c655ea261e111ab31810faba4390  step90000/step90000-FP8-torchao/diffusion_pytorch_model.safetensors
-3667d1818ef054bc7f6f69fc65653a2bcf9091ea2994df81127eb4a35921dc4a  step90000/step90000-INT8-bnb/diffusion_pytorch_model.safetensors
-0b6944d25b531c2b8f747c8a9df95b4204fa420216a98728c727b2068e5b8db9  step90000/step90000-NF4-bnb/diffusion_pytorch_model.safetensors
+027501fd6abb571a2415e9728c128e96acdf3271222ea4fbf69f9efad4f136d3  qwen-image-2.1-step90000-BF16.gguf
+8fa0b4e2c7117adc800961a2cdba05b6b3358fc7d7bbe76b1aa0a6555e18396b  qwen-image-2.1-step90000-Q4_0.gguf
+05be65dea694885d0e81e783b172e68cf8d6a36a1143f778138df31f0cc81c3d  qwen-image-2.1-step90000-Q4_K_M.gguf
+5f577a47d0c53f524e4bc379aa12dc7dc85c8746379e95e0b6b71bf18f09b62e  qwen-image-2.1-step90000-Q5_K_M.gguf
+8502230f8b8d2a4cdb2946f7454778267c1f57827db875abade580b9b49bbc12  qwen-image-2.1-step90000-Q6_K.gguf
+58ab4d7baaa58ad7bdda18e6aafc22eebce1f494932d08c34667b88ab4fee5ca  qwen-image-2.1-step90000-Q8_0.gguf
+ff341f9485d8f8e57ea4dbb4817eac5f8fddfd3c95299b20b66e691732cd698e  qwen-image-2.1-step90000-FP8-comfy.safetensors
+90ad49ec21d9477f8ae4f976ba9a9a5d97b8c4248b813eae2cc214a2f50f490e  qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors
+e6e2ff44754101ef769a345e525a9d4c4f491535093b2ee42cebd09d43b8eecd  qwen-image-2.1-step90000-NVFP4-comfy.safetensors
+719c1583dc6dc0502e02777fca2d86924788494142cf09f632dcbaa3bb7f427b  qwen-image-2.1-step90000-FP8-torchao/diffusion_pytorch_model.safetensors
+d92f50e238269890397fd7bb3e5b657e191eb2ce22f84ab1775924a9025b766c  qwen-image-2.1-step90000-INT8-bnb/diffusion_pytorch_model.safetensors
+98c62f7a44774a45e2538c9d8ca0ba55452b02edbd10a01c05ec73b71554daa1  qwen-image-2.1-step90000-NF4-bnb/diffusion_pytorch_model.safetensors

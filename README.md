@@ -8,7 +8,7 @@
 This repository holds the **documentation, inference code and checksums** for the quantized ChatR Labs Omni
 release of [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1). Weights live on Hugging Face.
 
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized)** — 78 GB
+- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized)** — 78.3 GB
 
 Each repository is a rank-128 adapter merged into the base transformer at **LoRA strength 1.0**, then quantized.
 Quantized transformer weights only: the text encoder, processor and VAE come from the base repository.
@@ -33,9 +33,9 @@ interface accepts one to three reference images. Requests share a queue.
 | **FP8** | FP8 E4M3, Comfy | 265 | 7.12 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/resolve/main/qwen-image-2.1-step90000-FP8-comfy.safetensors) |
 | **INT8 ConvRot** | INT8 ConvRot, Comfy | 265 | 7.26 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/resolve/main/qwen-image-2.1-step90000-INT8-ConvRot-comfy.safetensors) |
 | **NVFP4** | NVFP4, Comfy | 265 | 4.20 GB | [file](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/resolve/main/qwen-image-2.1-step90000-NVFP4-comfy.safetensors) |
-| **FP8 (torchao)** | FP8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
-| **NF4** | NF4, Diffusers | 297 | 3.50 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
-| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 6.70 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
+| **FP8 (torchao)** | FP8, Diffusers | 297 | 7.12 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
+| **NF4** | NF4, Diffusers | 297 | 3.67 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
+| **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 7.12 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
 
 File integrity information is in [SHA256SUMS](./SHA256SUMS).
 
