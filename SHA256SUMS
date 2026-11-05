@@ -10,3 +10,4 @@ e6e2ff44754101ef769a345e525a9d4c4f491535093b2ee42cebd09d43b8eecd  qwen-image-2.1
 719c1583dc6dc0502e02777fca2d86924788494142cf09f632dcbaa3bb7f427b  qwen-image-2.1-step90000-FP8-torchao/diffusion_pytorch_model.safetensors
 d92f50e238269890397fd7bb3e5b657e191eb2ce22f84ab1775924a9025b766c  qwen-image-2.1-step90000-INT8-bnb/diffusion_pytorch_model.safetensors
 98c62f7a44774a45e2538c9d8ca0ba55452b02edbd10a01c05ec73b71554daa1  qwen-image-2.1-step90000-NF4-bnb/diffusion_pytorch_model.safetensors
+97b3ad25796fc4b7d5e2572ffb3bd8560e3c343d79623e2711fabe9ebcf3cfe3  qwen-image-2.1-step90000-BF16/diffusion_pytorch_model.safetensors

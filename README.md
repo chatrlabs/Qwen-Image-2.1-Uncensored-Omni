@@ -8,7 +8,7 @@
 This repository holds the **documentation, inference code and checksums** for the quantized ChatR Labs Omni
 release of [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1). Weights live on Hugging Face.
 
-- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized)** — 78.3 GB
+- **[chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized)** — 92.5 GB
 
 Each repository is a rank-128 adapter merged into the base transformer at **LoRA strength 1.0**, then quantized.
 Quantized transformer weights only: the text encoder, processor and VAE come from the base repository.
@@ -36,6 +36,7 @@ interface accepts one to three reference images. Requests share a queue.
 | **FP8 (torchao)** | FP8, Diffusers | 297 | 7.12 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-FP8-torchao) |
 | **NF4** | NF4, Diffusers | 297 | 3.67 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-NF4-bnb) |
 | **INT8 (bitsandbytes)** | INT8, Diffusers | 297 | 7.12 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-INT8-bnb) |
+| **BF16** | BF16 safetensors, Diffusers | 297 | 14.23 GB | [folder](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/tree/main/qwen-image-2.1-step90000-BF16) |
 
 File integrity information is in [SHA256SUMS](./SHA256SUMS).
 
@@ -45,7 +46,8 @@ File integrity information is in [SHA256SUMS](./SHA256SUMS).
 - **ComfyUI, native quant ops** → **FP8**, **INT8 ConvRot** or **NVFP4**.
 - **Diffusers, smallest download** → **NF4** (needs `bitsandbytes`).
 - **Diffusers, best fidelity** → **FP8 (torchao)** (needs `torchao`).
-- **Maximum fidelity overall** → **BF16 GGUF** or **Q8_0**.
+- **Maximum fidelity overall** → **BF16 GGUF**, **BF16 safetensors** or **Q8_0**.
+- **Diffusers without the `gguf` package** → the **BF16** folder (plain `from_pretrained`).
 
 The `297` and `265` layouts are not interchangeable. `265` uses the fused `img_mlp.gate_up` projection ComfyUI
 expects; `297` keeps the separate `gate_layer` / `proj` pair Diffusers expects. Loading a `265` file in Diffusers,
