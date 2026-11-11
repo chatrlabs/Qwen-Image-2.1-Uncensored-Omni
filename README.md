@@ -82,6 +82,47 @@ ComfyUI/models/
 - **Comfy native:** `Load Diffusion Model` → pick a `-comfy.safetensors` file.
 - **Editing:** encode the reference image with `Text Encoder (Qwen-Image)` in edit mode; the latent comes from that node.
 
+### Text-to-image workflow: BF16 transformer, INT8 text encoder, BF16 VAE
+
+Download [workflow_example.json](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/resolve/main/workflow_example.json) and drag it into ComfyUI, or open it with the
+workflow Load command. This is a ComfyUI UI workflow for text-to-image generation. It uses an
+`EmptyLatentImage` and does not require reference images.
+
+The tested environment is **ComfyUI 0.39.0**
+([commit `b0b7435`](https://github.com/Comfy-Org/ComfyUI/tree/b0b743566f65daafc423b4fea8a2fbda94b3384a)),
+with frontend **1.53.6**. Use this version or a compatible build with the native `TextEncodeQwenImage21`,
+`QwenImage21Cache` and INT8 ConvRot text-encoder support. All nine nodes in this workflow are built into
+the tested ComfyUI version.
+
+Download the following three components and place them at these paths relative to your ComfyUI folder:
+
+| Component | Download | Local path expected by the workflow |
+| --- | --- | --- |
+| BF16 transformer | [ChatR Labs BF16 safetensors](https://huggingface.co/chatrlabs/Qwen-Image-2.1-Uncensored-Omni-Quantized/resolve/main/qwen-image-2.1-step90000-BF16/diffusion_pytorch_model.safetensors) | `models/diffusion_models/chatrlabs_qwen_image21_step90000_bf16.safetensors` |
+| INT8 ConvRot text encoder | [Comfy-Org Qwen3-VL-8B](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/text_encoders/qwen3vl_8b_int8_convrot.safetensors) | `models/text_encoders/qwen3vl_8b_int8_convrot.safetensors` |
+| BF16 VAE | [Comfy-Org Qwen-Image-2.1 VAE](https://huggingface.co/Comfy-Org/Qwen-Image-2.1/resolve/aacf31a6d48e707f352ecba714cee0680da3479b/vae/qwen_image_2.1_vae_bf16.safetensors) | `models/vae/qwen_image_2.1_vae_bf16.safetensors` |
+
+Rename the downloaded transformer from `diffusion_pytorch_model.safetensors` to
+`chatrlabs_qwen_image21_step90000_bf16.safetensors`; its weights are unchanged. Refresh the model lists
+or restart ComfyUI, then check the selections in `UNETLoader`, `CLIPLoader` (type `qwen_image`) and
+`VAELoader`. Here, BF16 refers to the transformer and VAE; the text encoder is INT8 ConvRot.
+
+| Saved setting | Value |
+| --- | --- |
+| Steps / CFG | **35 / 5.0** |
+| Sampler / scheduler | `er_sde` / `simple` |
+| Seed / seed control | `12347` / `fixed` |
+| Width / height / batch size | `1728` / `1728` / `1` |
+| Denoise | `1.0` |
+| Negative prompt | A single space: `" "` |
+| KV cache device / dtype | `auto` / `default` |
+
+Edit the prompt in `TextEncodeQwenImage21`, set the output dimensions in `EmptyLatentImage`, and adjust
+the seed in `KSampler` as needed before queuing. The saved 1728 x 1728 resolution is this example's
+setting; larger images require more memory than the starting resolutions above. `SaveImage` writes to
+`ComfyUI/output/` with the saved prefix `sample_0006_seed12347`; update the prefix for your own runs.
+The workflow's SHA-256 is included in [SHA256SUMS](./SHA256SUMS).
+
 ## Usage with Diffusers
 
 Install the dependencies in [requirements.txt](./requirements.txt).
